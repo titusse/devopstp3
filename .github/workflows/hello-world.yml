@@ -1,0 +1,24 @@
+name: Hello World CI
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Echo Hello World
+        run: echo "Hello World"
+  say-good-by:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout du code
+        uses: actions/checkout@v3
+
+      - name: Echo Good by
+        run: echo "Good-by"
