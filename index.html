@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prénom Nom — CV</title>
+  <meta name="description" content="CV de Prénom Nom — Poste/Spécialité" />
+  <style>
+    :root{
+      --bg:#f7f7f8;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --border:#e5e7eb;
+      --accent:#2563eb;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.55;
+    }
+    .page{
+      max-width: 960px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    header{
+      background: var(--card);
+      border:1px solid var(--border);
+      border-radius: 16px;
+      padding:24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+    .top{
+      display:flex;
+      gap:16px;
+      align-items:flex-start;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .identity h1{
+      font-size: clamp(28px, 3vw, 36px);
+      line-height:1.2;
+      margin:0 0 6px;
+      letter-spacing:.3px;
+    }
+    .identity .role{
+      margin:0;
+      color:var(--muted);
+      font-weight:500;
+    }
+    .contact{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .contact a{ color: inherit; text-decoration: none; border-bottom:1px dotted var(--border); }
+    .contact a:hover{ color:var(--accent) }
+    .actions{ margin-top:12px }
+    .print-btn{
+      appearance:none; border:1px solid var(--border); background:var(--card);
+      padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600;
+    }
+    .print-btn:hover{ border-color:var(--accent); color:var(--accent) }
+
+    main{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+    }
+    @media (min-width: 900px){
+      main{ grid-template-columns: 2fr 1fr; }
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+    h2{
+      font-size:14px;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:#374151;
+      margin:0 0 12px;
+      border-bottom:1px solid var(--border);
+      padding-bottom:8px;
+    }
+    .item{ margin-bottom:14px }
+    .item:last-child{ margin-bottom:0 }
+    .item .title{
+      display:flex; gap:8px; align-items:baseline; flex-wrap:wrap;
+      font-weight:700;
+    }
+    .item .meta{
+      color:var(--muted);
+      font-size:14px;
+    }
+    .item ul{
+      margin:8px 0 0 18px;
+    }
+    .taglist{
+      display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;
+    }
+    .tag{
+      font-size:12px; padding:4px 8px; border:1px solid var(--border);
+      border-radius:999px; background:#fafafa;
+    }
+    .small{ font-size:14px; color:var(--muted) }
+
+    /* Impression */
+    @media print{
+      body{ background:#fff }
+      .page{ margin:0; max-width:none; padding:0 }
+      header, .card{ box-shadow:none }
+      .print-btn, .actions{ display:none !important }
+      a{ color:inherit; text-decoration:underline }
+      .item{ break-inside: avoid }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header role="banner" aria-label="En-tête CV">
+      <div class="top">
+        <div class="identity">
+          <h1>Prénom Nom</h1>
+          <p class="role">Titre du poste / Spécialité</p>
+        </div>
+        <div class="contact" aria-label="Coordonnées">
+          <span>📍 Ville, Pays</span>
+          <a href="tel:+33123456789">📞 +33 1 23 45 67 89</a>
+          <a href="mailto:prenom.nom@email.com">✉️ prenom.nom@email.com</a>
+          <a href="https://www.linkedin.com/in/votreprofil" target="_blank" rel="noreferrer">in/ votreprofil</a>
+          <a href="https://votreportfolio.dev" target="_blank" rel="noreferrer">🌐 votreportfolio.dev</a>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimer / Exporter en PDF</button>
+      </div>
+    </header>
+
+    <main role="main">
+      <!-- Colonne principale -->
+      <section class="card" aria-label="Expériences">
+        <h2>Expériences</h2>
+
+        <article class="item">
+          <div class="title">Développeur Full-Stack — <span class="meta">Société ABC</span></div>
+          <div class="meta"><time datetime="2023-01">Jan. 2023</time> – <time datetime="2025-08">Août 2025</time> · Paris (hybride)</div>
+          <ul>
+            <li>Conception et développement d’une application SaaS (Java / Angular) utilisée par 1 500+ utilisateurs.</li>
+            <li>Mise en place CI/CD (Docker, GitHub Actions) réduisant le time-to-prod de 40 %.</li>
+            <li>Optimisation des performances (caching, compression) : TTFB −35 %.</li>
+          </ul>
+          <div class="taglist">
+            <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
+          </div>
+        </article>
+
+        <article class="item">
+          <div class="title">Ingénieur Logiciel — <span class="meta">Startup XYZ</span></div>
+          <div class="meta"><time datetime="2021-06">Juin 2021</time> – Déc. 2022 · Remote</div>
+          <ul>
+            <li>Développement d’APIs REST et intégration de paiement.</li>
+            <li>Refonte UI avec design system, +18 % d’engagement.</li>
+          </ul>
+          <div class="taglist">
+            <span class="tag">Node.js</span><span class="tag">TypeScript</span><span class="tag">AWS</span>
+          </div>
+        </article>
+      </section>
+
+      <!-- Colonne latérale -->
+      <aside class="card" aria-label="Profil & Compétences">
+        <h2>Profil</h2>
+        <p class="small">
+          Développeur passionné par les produits utiles, la performance et l’expérience utilisateur.
+          Autonome, pédagogue, orienté impact.
+        </p>
+
+        <h2>Compétences</h2>
+        <div class="taglist">
+          <span class="tag">Java</span><span class="tag">Spring</span><span class="tag">Angular</span>
+          <span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">SQL</span>
+          <span class="tag">Tests</span><span class="tag">Linux</span>
+        </div>
+
+        <h2>Langues</h2>
+        <p class="small">Français (C2), Anglais (C1)</p>
+
+        <h2>Formation</h2>
+        <div class="item">
+          <div class="title">Licence Informatique — <span class="meta">Université Ex.</span></div>
+          <div class="meta"><time datetime="2018">2018</time> – <time datetime="2021">2021</time></div>
+        </div>
+
+        <h2>Centres d’intérêt</h2>
+        <p class="small">Open source, photo, trail, pédagogie.</p>
+      </aside>
+
+      <!-- Autres sections en bas de la colonne principale -->
+      <section class="card" aria-label="Projets">
+        <h2>Projets</h2>
+        <article class="item">
+          <div class="title">ChronoShare — <span class="meta">outil de gestion du temps</span></div>
+          <ul>
+            <li>Module de reporting temps réel, export CSV/PDF, authentification JWT.</li>
+          </ul>
+          <div class="taglist">
+            <span class="tag">Spring Security</span><span class="tag">JWT</span><span class="tag">AWS S3</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="card" aria-label="Certifications">
+        <h2>Certifications</h2>
+        <div class="item">
+          <div class="title">AWS Certified Cloud Practitioner</div>
+          <div class="meta"><time datetime="2024-05">Mai 2024</time></div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
